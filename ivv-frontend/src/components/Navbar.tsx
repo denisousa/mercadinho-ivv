@@ -16,10 +16,30 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+     <AppBar position="static" sx={{ backgroundColor: '#333333' }}> 
       <Toolbar>
+        
+        <Box
+          component="img" // Isso garante que o Box renderize uma tag <img> HTML
+          src="/images/inst.jpg" // CAMINHO DA SUA IMAGEM. Certifique-se que o nome do arquivo 'inst.jpg' está correto!
+          alt="Logo Mercadinho IVV" // Texto alternativo para acessibilidade
+          sx={{
+            height: 80, // ALTURA DA IMAGEM: Ajuste este valor (ex: 30, 50, etc.) para o tamanho desejado
+            // Se você quer que a imagem seja um círculo perfeito e a altura é 90, defina a largura também:
+            // width: 90, 
+            marginRight: 2, // ESPAÇAMENTO: Adiciona um espaço de 16px à direita da imagem para não colar no texto
+            // ---------------------------------------------------------------------------------------
+            // CÓDIGO NOVO: PARA ARREDONDAR A IMAGEM
+            borderRadius: '60%', // Isso fará a imagem parecer um círculo se a altura e largura forem iguais
+                                // ou um oval se forem diferentes.
+                                // Se quiser apenas bordas arredondadas, use um valor em px, ex: '15px'
+            // ---------------------------------------------------------------------------------------
+          }}
+        />
+    
+
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-          Mercadinho do IVV
+          MERCADINHO IVV
         </Typography>
         
         <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>
@@ -86,4 +106,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar; 
+export default Navbar;
